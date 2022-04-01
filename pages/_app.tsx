@@ -1,8 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from "react";
+import Head from "next/head";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import "styles/global.css";
 
-export default MyApp
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <Head>
+        <title>Scroll</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
+};
+
+export default React.memo(App);
