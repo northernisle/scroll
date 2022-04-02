@@ -32,9 +32,6 @@ const theme = extendTheme({
   shadows: {
     outline: '0 0 0 3px var(--chakra-ui-focus-ring-color)',
   },
-  fonts: {
-    heading: "'Rubik', sans-serif",
-  },
   config: {
     initialColorMode: 'system',
     useSystemColorMode: true,
