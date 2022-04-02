@@ -1,14 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
 
-import theme from 'theme';
+import { ChakraColorModeProvider } from 'components';
+
 import 'styles/global.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraColorModeProvider cookies={pageProps.cookies}>
       <Head>
         <title>Scroll</title>
         <meta
@@ -18,8 +18,10 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       <Component {...pageProps} />
-    </ChakraProvider>
+    </ChakraColorModeProvider>
   );
 };
+
+export { getServerSideProps } from 'components/ChakraColorModeProvider';
 
 export default App;
