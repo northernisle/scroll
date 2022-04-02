@@ -1,12 +1,13 @@
-import { Center, Fade } from '@chakra-ui/react';
+import { Container, Fade } from '@chakra-ui/react';
 
-import { Header } from 'components';
+import { Header, Body } from 'components';
 
 const Home = () => {
   return (
-    <Center as={Fade} in mx='auto' maxW='container.lg'>
+    <Container centerContent h='100%' maxW='container.xl'>
       <Header />
-    </Center>
+      <Body />
+    </Container>
   );
 };
 

@@ -12,7 +12,11 @@ const semanticTokens = {
       default: 'gray.800',
       _light: 'gray.100',
     },
-    accent: '#B57BA6',
+    accent: {
+      default: 'purple.200',
+      _light: 'purple.300',
+    },
+    ring: '#B57BA6',
   },
 };
 
@@ -22,7 +26,7 @@ const theme = extendTheme({
   styles: {
     global: {
       html: {
-        '--chakra-ui-focus-ring-color': semanticTokens.colors.accent,
+        '--chakra-ui-focus-ring-color': semanticTokens.colors.ring,
       },
       body: {
         backgroundColor: 'primary',
