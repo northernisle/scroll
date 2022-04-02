@@ -1,5 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { createGetInitialProps } from '@mantine/next';
+import { ColorModeScript } from '@chakra-ui/system';
+
+import theme from 'theme';
 
 const Document = () => {
   return (
@@ -11,13 +13,12 @@ const Document = () => {
         />
       </Head>
       <body>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />
       </body>
     </Html>
   );
 };
-
-Document.getInitialProps = createGetInitialProps();
 
 export default Document;

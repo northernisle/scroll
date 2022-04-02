@@ -1,13 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
-import { MantineProvider } from '@mantine/core';
+import { ChakraProvider } from '@chakra-ui/react';
 
+import theme from 'theme';
 import 'styles/global.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <ChakraProvider theme={theme}>
       <Head>
         <title>Scroll</title>
         <meta
@@ -16,17 +17,9 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
 
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          colorScheme: 'dark',
-        }}
-      >
-        <Component {...pageProps} />
-      </MantineProvider>
-    </>
+      <Component {...pageProps} />
+    </ChakraProvider>
   );
 };
 
-export default React.memo(App);
+export default App;
