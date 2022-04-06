@@ -1,10 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { Global } from '@emotion/react';
 
+import GlobalStyles from 'theme/global';
 import { ChakraColorModeProvider } from 'components';
 
-import 'styles/global.css';
+import 'focus-visible/dist/focus-visible';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -17,6 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
 
+      <Global styles={GlobalStyles} />
       <Component {...pageProps} />
     </ChakraColorModeProvider>
   );

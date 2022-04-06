@@ -1,26 +1,30 @@
-import { Center, Heading, Box, HStack, Img } from '@chakra-ui/react';
+import { Center, Img, Stack, VStack } from '@chakra-ui/react';
 
-import { Sidebar } from 'components';
+import { Title, ArticleInput, ExtensionLinks } from 'components';
 
 const Body = () => {
   return (
-    <Center flexGrow={1} minHeight={800} flexDir='column'>
-      <Heading size='3xl'>
-        Read your favorite articles{' '}
-        <Box color='accent' display='inline'>
-          without ads and paywalls
-        </Box>
-        , just like you deserve.
-      </Heading>
-      <HStack
-        w='full'
-        justifyContent='space-between'
-        mt={32}
-        alignItems='flex-start'
+    <Center flexGrow={1} flexDirection='column'>
+      <Stack
+        mt={{ base: 10, sm: 0 }}
+        spacing={{ base: 14, lg: 4 }}
+        direction={{ base: 'column', lg: 'row' }}
+        alignItems={{ base: 'center', lg: 'flex-start' }}
       >
-        <Sidebar />
-        <Img src='/article.svg' flexShrink={1} maxW={650} w='full' />
-      </HStack>
+        <VStack alignItems='flex-start' spacing={14}>
+          <Title />
+          <ArticleInput />
+          <ExtensionLinks />
+        </VStack>
+
+        <Img
+          src='/article.svg'
+          w='full'
+          flexShrink={1}
+          maxW={{ base: 400, lg: 500 }}
+          minW={0}
+        />
+      </Stack>
     </Center>
   );
 };

@@ -5,9 +5,6 @@ const Link: ComponentSingleStyleConfig = {
     _hover: {
       textDecoration: 'none',
     },
-    _focus: {
-      boxShadow: 'none',
-    },
   },
 };
 
