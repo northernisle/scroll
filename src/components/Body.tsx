@@ -18,11 +18,12 @@ const Body = () => {
         </VStack>
 
         <Img
-          src='/article.svg'
           w='full'
-          flexShrink={1}
-          maxW={{ base: 400, lg: 500 }}
           minW={0}
+          maxW={{ base: 400, lg: 500 }}
+          flexShrink={1}
+          src='/article.svg'
+          alt='Article image'
         />
       </Stack>
     </Center>
