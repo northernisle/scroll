@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import {
   useBreakpointValue,
   Box,
@@ -9,21 +8,18 @@ import {
   Button,
 } from '@chakra-ui/react';
 
-import { isValidUrl } from 'utils';
+import { useLinkRouter } from 'hooks';
 
 const ArticleInput = () => {
   const hideAddon = useBreakpointValue({ base: true, sm: false });
   const [url, setUrl] = useState('');
-  const router = useRouter();
+  const router = useLinkRouter();
 
   const handleSubmit = (
     event?: React.FormEvent<HTMLFormElement | HTMLButtonElement>
   ) => {
     event?.preventDefault();
-
-    if (isValidUrl(url)) {
-      router.push(`/${url}`);
-    }
+    router.navigate(url);
   };
 
   return (
