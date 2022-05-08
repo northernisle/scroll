@@ -1,4 +1,4 @@
-import { Container } from '@chakra-ui/react';
+import { Container, Fade } from '@chakra-ui/react';
 
 import { Header, Body } from 'components';
 
